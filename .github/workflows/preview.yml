@@ -1,0 +1,32 @@
+name: Deploy to Firebase Hosting (Preview)
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-preview:
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install Zola
+        uses: taiki-e/install-action@v2
+        with:
+          tool: zola@0.19.2
+
+      - name: Build
+        run: zola build
+
+      - name: Deploy to Firebase Hosting (preview)
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          projectId: ichautomatisierdasjetzt
+          expires: 7d

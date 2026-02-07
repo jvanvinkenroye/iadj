@@ -1,0 +1,99 @@
+base_url = "https://ichautomatisierdasjetzt.de"
+theme = "tabi"
+title = "Ich automatisier das jetzt"
+description = "Blog über Digitalisierung, Automatisierung und Experimente mit Technik."
+author = "java"
+generate_feeds = true
+feed_filenames = ["atom.xml"]
+compile_sass = true
+minify_html = true
+build_search_index = true
+default_language = "de"
+
+taxonomies = [{name = "tags", feed = true}]
+
+[search]
+include_title = true
+include_description = true
+include_path = true
+include_content = true
+index_format = "elasticlunr_json"
+
+[markdown]
+bottom_footnotes = true
+smart_punctuation = true
+external_links_class = "external"
+
+[markdown.highlighting]
+theme = "catppuccin-frappe"
+style = "class"
+error_on_missing_language = true
+
+[extra]
+theme_switcher = true
+default_theme = ""
+skin = "teal"
+browser_theme_color = "#087e96"
+override_serif_with_sans = false
+
+# Copy button on code blocks
+copy_button = true
+code_block_name_links = false
+force_codeblock_ltr = true
+
+# Post display
+show_author = true
+show_reading_time = true
+show_date = true
+post_listing_date = "date"
+show_previous_next_article_links = true
+quick_navigation_buttons = true
+toc = true
+
+# Date formats (German style)
+long_date_format = "%d. %B %Y"
+short_date_format = "%d.%m.%Y"
+
+separator = "·"
+compact_tags = false
+tag_sorting = "name"
+invert_title_order = false
+
+# Favicon (emoji as fallback)
+favicon_emoji = "🤖"
+
+# Navigation menu
+menu = [
+    { name = "blog", url = "blog", trailing_slash = true },
+    { name = "archive", url = "archive", trailing_slash = true },
+    { name = "tags", url = "tags", trailing_slash = true },
+]
+
+# RSS icon in footer
+feed_icon = true
+full_content_in_feed = true
+
+# Footer menu
+footer_menu = [
+    {url = "sitemap.xml", name = "sitemap", trailing_slash = false},
+]
+
+# CSP
+enable_csp = true
+allowed_domains = [
+    { directive = "font-src", domains = ["'self'", "data:"] },
+    { directive = "img-src", domains = ["'self'", "https://*", "data:"] },
+    { directive = "script-src", domains = ["'self'"] },
+    { directive = "style-src", domains = ["'self'"] },
+]
+
+# Font subsetting
+enable_subset = true
+custom_subset = false
+
+# Disable comment systems
+[extra.giscus]
+enabled_for_all_posts = false
+
+[extra.utterances]
+enabled_for_all_posts = false
