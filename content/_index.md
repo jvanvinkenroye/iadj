@@ -1,5 +1,5 @@
 +++
-title = "Ich automatisier das jetzt"
+title = "Neueste Beiträge"
 sort_by = "date"
 
 [extra]
