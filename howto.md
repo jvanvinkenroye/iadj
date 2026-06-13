@@ -52,4 +52,4 @@ git commit -m "Add post: Titel des Posts"
 git push
 ```
 
-Nach ca. 45 Sekunden automatisch live auf https://ichautomatisierdasjetzt.web.app.
+Nach ca. 45 Sekunden automatisch live auf https://ichautomatisierdasjetzt.de.
